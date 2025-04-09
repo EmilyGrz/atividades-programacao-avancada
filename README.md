@@ -44,11 +44,11 @@ Refatore a classe de Empresa, para
 - Crie um atributo de produtos na empresa e use um map para cadastrar os produtos.
 - Crie os métodos para cadastro, edição, remoção e listagem de produtos.
 
-### ATIVIDADE 6 - SLIDE AULA 8
+### ATIVIDADE 6 - SLIDE AULA 8 *FEITA!*(eu acho...)
 - Na classe Empresa, crie uma lista de elementos da classe Produto.
 - Crie uma stream de dados para filtrar essa lista por preço, quantidade de produtos e nome do produto.
 
-### ATIVIDADE 7 - SLIDE AULA 10
+### ATIVIDADE 7 - SLIDE AULA 10 *FEITA!*(eu acho...)
 Na classe ContaBancaria: 
 - Criar uma exceção personalizada SaldoInsuficienteException.
 - Implementar o tratamento adequado para evitar saques indevidos.
