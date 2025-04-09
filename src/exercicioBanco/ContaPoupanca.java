@@ -9,14 +9,15 @@ class ContaPoupanca extends ContaBancaria {
     }
 
     @Override
-    public void sacar(double valor) {
-        if (saldo >= valor) {
-            saldo -= valor;
-            System.out.println("Saque de R$ " + valor + " realizado. Novo saldo: R$ " + saldo);
-        } else {
-            System.out.println("Saldo insuficiente para realizar o saque.");
-        }
+public void sacar(double valor) throws SaldoInsuficienteException {
+    if (saldo >= valor) {
+        saldo -= valor;
+        System.out.println("Saque de R$ " + valor + " realizado. Novo saldo: R$ " + saldo);
+    } else {
+        throw new SaldoInsuficienteException("Saldo insuficiente para saque de R$ " + valor);
     }
+}
+
 
     public void aplicarRendimento() {
         double rendimento = saldo * (rendimentoMensal / 100);
