@@ -9,15 +9,15 @@ class ContaCorrente extends ContaBancaria implements Tributavel {
     }
 
     @Override
-    public void sacar(double valor) {
-        double valorTotal = valor + tarifa;
-        if (saldo >= valorTotal) {
-            saldo -= valorTotal;
-            System.out.println("Saque de R$ " + valor + " realizado. Tarifa de R$ " + tarifa + " aplicada. Novo saldo: R$ " + saldo);
-        } else {
-            System.out.println("Saldo insuficiente para realizar o saque.");
-        }
+public void sacar(double valor) throws SaldoInsuficienteException {
+    double valorTotal = valor + tarifa;
+    if (saldo >= valorTotal) {
+        saldo -= valorTotal;
+        System.out.println("Saque de R$ " + valor + " realizado. Tarifa de R$ " + tarifa + " aplicada. Novo saldo: R$ " + saldo);
+    } else {
+        throw new SaldoInsuficienteException("Saldo insuficiente para saque de R$ " + valor + " + tarifa de R$ " + tarifa);
     }
+}
 
     @Override
     public double calcularIR() {
