@@ -7,6 +7,8 @@ public class Empresa {
     private Set<String> emails;
     private ArrayList<Funcionario> funcionarios;
     private Map<String, Double> produtos;
+    private List<Produto> listaProdutos;
+
 
     public Empresa(String nome, String cnpj) {
         this.nome = nome;
@@ -14,6 +16,8 @@ public class Empresa {
         this.emails = new HashSet<>();
         this.funcionarios = new ArrayList<>();
         this.produtos = new HashMap<>();
+        this.listaProdutos = new ArrayList<>();
+
     }
 
     // Método para adicionar e-mail
@@ -52,6 +56,20 @@ public class Empresa {
         }
     }
 
+    // Métodos para adicionar produtos na lista
+    public void adicionarProdutoNaLista(Produto produto) {
+    listaProdutos.add(produto);
+}
+   // Métodos para filtrar produtos usando Stream
+    public void filtrarProdutos(double precoMin, int quantidadeMin, String nomeContem) {
+    System.out.println("Produtos filtrados:");
+    listaProdutos.stream()
+        .filter(p -> p.getPreco() >= precoMin)
+        .filter(p -> p.getQuantidade() >= quantidadeMin)
+        .filter(p -> p.getNome().toLowerCase().contains(nomeContem.toLowerCase()))
+        .forEach(System.out::println);
+   }
+    
     // Métodos para manipulação de produtos
     public void adicionarProduto(String nome, double preco) {
         produtos.put(nome, preco);
