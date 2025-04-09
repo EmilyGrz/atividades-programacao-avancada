@@ -18,7 +18,7 @@ abstract class ContaBancaria {
         System.out.println("Depósito de R$ " + valor + " realizado. Novo saldo: R$ " + saldo);
     }
 
-    public abstract void sacar(double valor);
+    public abstract void sacar(double valor) throws SaldoInsuficienteException;
 
     public void exibirSaldo() {
         System.out.println("Saldo atual de " + titular + " (Agência: " + agencia + ", Conta: " + conta + "): R$ " + saldo);
