@@ -19,6 +19,14 @@ public class Main {
 
         f.exibirInfo();
 
+        Empresa e = new Empresa("Tech & CIA", "12.345.678/0001-91");
+
+        e.adicionarProduto(new Produto("Notebook", 5000.0, 5));
+        e.adicionarProduto(new Produto("Mouse", 50.0, 50));
+        e.adicionarProduto(new Produto("Monitor", 400.0, 10));
+        e.adicionarProduto(new Produto("Cadeira Gamer", 2500.0, 2));
+
+        e.filtrarProdutos(1000.0, 3, "o");  // Esse exmplo filtra produtos com preço >= 1000, quantidade >= 3 e nome contendo "o"
 
 
     }
